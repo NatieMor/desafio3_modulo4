@@ -1,4 +1,5 @@
 #requerimiento 1
+=begin
 def salario
     print "Ingresa tu salario actual: "
     salario = gets.chomp.to_i
@@ -9,48 +10,37 @@ def salario
 end
 nuevo=salario
 puts "Tu nuevo salario seria de ==> #{nuevo.to_f}"
+=end
 
-=begin
+
 #requerimiento 2
 
-def
-    puts "ingresa piedra, papel o tijera"
-opcion = gets.chomp.to_s
-pc = rand(1...4)
-#empate
-if pc  == 1 && opcion == "piedra" || pc  == 2 && opcion == "papel" || pc  == 3 && opcion == "tijera"
-    puts "pc juega #{opcion} "
-    puts "empataste"
-#pierdo
-elsif pc == 1 && opcion == "tijera"
-    puts "pc juega piedra"
-    puts "perdiste"
-elsif pc == 2 && opcion == "piedra" 
-    puts "pc juega papel"
-    puts "perdiste" 
-elsif pc == 3 && opcion == "papel"
-    puts "pc juega tijera"
-    puts "perdiste" 
-#gano
-elsif pc == 1 && opcion == "papel"
-    puts "pc juega piedra "
-    puts "ganaste"
-elsif pc == 2 && opcion == "tijera"
-    puts "pc juega papel"
-    puts "ganaste" 
-elsif pc == 3  && opcion == "piedra" 
-    puts "pc juega tijera"    
-    puts "ganaste"
-
-#mal escrito
-else
-    puts "escogiste #{opcion} -- Argumento invalido: debe ser piedra, papel o tijera"
+puts "adivina el número entre 1 y 3"
+def juego
+    i=0
+    5.times  do |i|
+        puts "ingresa un número"
+        opcion = gets.chomp.to_i
+        pc = rand(1...3)
+        puts
+        if pc  == opcion 
+        puts "pc juega #{opcion} Tu Ganaste!!!! "
+        puts
+        else 
+            puts "pc juega #{pc}"
+        puts "perdiste"
+        puts
+         end
+         puts
+    break if i > 6
+        end
 end
+juego 
+puts
+puts "fin del juego"
 
 
-
-end
-
+=begin
 #requerimiento 3
 
 def
@@ -58,6 +48,7 @@ def
 
 end
 =end
+=begin
 #este es el mio 
 puts "*** ¡Bienvenido/a al sistema de cálculo IMC!***"
 def imc
