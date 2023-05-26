@@ -1,35 +1,38 @@
 #requerimiento 1
 =begin
+puts "**** Bienvenido al calculo de tu nuevo salario ****"
 def salario
-    print "Ingresa tu salario actual: "
+    print "Por favor, ingresa tu salario actual: $ "
     salario = gets.chomp.to_i
-    print "cuanto es el porcentaje de incremento: "
+    print "Ingresa el porcentaje de incremento  % : "
     por= gets.chomp.to_f
     incremento= salario*(por/1000)
     nuevo= salario + incremento
 end
 nuevo=salario
-puts "Tu nuevo salario seria de ==> #{nuevo.to_f}"
+puts "Tu nuevo salario seria de ==> $ #{nuevo.to_f}"
 =end
 
-
+=begin
 #requerimiento 2
-
-puts "adivina el número entre 1 y 3"
+puts "Bienvenido al juego ** Adivina el número **"
+puts
+puts " Tienes 5 oportunidades, buena suerte!"
+puts
 def juego
-    i=0
+    i=01
     5.times  do |i|
-        puts "ingresa un número"
+        print "Ingresa un número entre 1 y 4: "
+        puts
         opcion = gets.chomp.to_i
-        pc = rand(1...3)
+        pc = rand(1...5)
         puts
         if pc  == opcion 
-        puts "pc juega #{opcion} Tu Ganaste!!!! "
+        puts "PC juegó #{opcion}, Felicidades ¡¡¡ Tu Ganaste !!!! "
         puts
         else 
-            puts "pc juega #{pc}"
-        puts "perdiste"
-        puts
+            puts "PC juega #{pc}, Lo siento, perdiste "
+            puts
          end
          puts
     break if i > 6
@@ -37,70 +40,38 @@ def juego
 end
 juego 
 puts
-puts "fin del juego"
+puts "Fin del juego, no te quedan más oportunidades"
+=end
 
-
-=begin
 #requerimiento 3
 
-def
-
-
-end
-=end
-=begin
-#este es el mio 
-puts "*** ¡Bienvenido/a al sistema de cálculo IMC!***"
-def imc
-    puts "Ingresa tu peso en Kilogramos:  "
-        peso= gets.chomp.to_f
-        puts "Ingresa tu altura expresada en metros: "
-        altura = gets.chomp.to_f
-        valor= peso/(altura**2)
-end
-puts 
-def masa_corporal (valor)
-    puts "Tu indice de masa corporal es ==> #{valor}"
-    if valor < 18.5
-        puts "Está bajo peso"
-    elsif valor >=18.5 && valor<25 
-        puts "Es un peso normal"
-    elsif valor >=25.0 && valor<30
-        puts "Está en sobrepeso"
-    else 
-        puts"Hay obesidad"
+    puts " *** ¡Bienvenido/a al sistema de cálculo IMC!***"
+    def imc
+        puts "Ingresa tu peso en Kilogramos:  "
+            peso= gets.chomp.to_f
+            puts "Ingresa tu altura expresada en metros: "
+            altura = gets.chomp.to_f
+            valor= peso/(altura**2)
     end
-end 
-
-resultadoIMC = imc 
-masa_corporal (resultadoIMC)
-
-=begin este es el de la clase
-puts "***** Bienvenido al sistema de calculo de IMC***"
-
-def calculoIMC
-    puts "Ingresa tu altura en metros"
-    altura = gets.chomp.to_f
-    puts "Ingresa tu peso en kilogramos"
-    peso = gets.chomp.to_f
-    imc = peso/(altura * altura) 
-    # si coloco el puts "Tu indice de masa corporal es ==> #{imc}" no va a retornar ya que el puts que queda con el valor y no lo retorna
-   
-end
-
-def masa_corporal (imc)
-    puts "Tu indice de masa corporal es ==> #{imc}" #se retorna solo cuando es retornado desde el IMC
-  if imc < 18.5
-    puts "Está bajo de peso."
-  elsif imc >= 18.5 && imc < 25
-    puts "Está en un peso normal" 
-  elsif imc >= 25 && imc < 30
-    puts "Está en sobre peso"
-  elsif imc >=30
-    puts "Hay obesidad"
-  end
-
-end
-#resultadoIMC = calculoIMC 
-masa_corporal (calculoIMC)
-=end
+    puts 
+    def masa_corporal (valor)
+        puts "Tu indice de masa corporal es ==> #{valor}"
+        if valor < 18.5
+            puts "Está bajo peso"
+        elsif valor >=18.5 && valor<25 
+            puts "Es un peso normal"
+        elsif valor >=25.0 && valor<30
+            puts "Está en sobrepeso"
+        elsif
+            valor > 30 && valor < 35
+            puts "Está en obesidad"
+            puts "obecidad tipo i"
+        elsif valor >= 35 && valor <50 
+            puts "obecidad tipo ii"
+        else 
+            puts "obecidad tipo iii"
+        end
+    end 
+    
+    resultadoIMC = imc 
+    masa_corporal(resultadoIMC)
